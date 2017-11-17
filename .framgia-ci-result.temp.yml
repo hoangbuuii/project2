@@ -1,6 +1,6 @@
 brakeman:
   comment: true
-  exit_code: 0
+  exit_code: 32512
   ignore: false
 bundle-audit:
   comment: true
@@ -12,15 +12,15 @@ eslint:
   ignore: false
 rails_best_practices:
   comment: true
-  exit_code: 0
+  exit_code: 32512
   ignore: false
 reek:
   comment: true
-  exit_code: 512
+  exit_code: 32512
   ignore: false
 rspec:
   comment: true
-  exit_code: 256
+  exit_code: 32512
   ignore: false
 rubocop:
   comment: true
