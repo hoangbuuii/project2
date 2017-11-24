@@ -23,7 +23,7 @@ en:
   invalid_combination: "Invalid email/password combination"
   log_in: "Log in"
   log_out: "Log out"
-  microposts: "Microposts"
+  posts: "posts"
   post: "Post"
   posted: "Posted"
   profile: "Profile"
