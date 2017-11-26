@@ -16,12 +16,12 @@ class User < ApplicationRecord
   scope :select_id_name_email, ->{select :id, :name, :email}
   scope :order_created_at, ->{order :created_at}
 
-  # def feed
-  #   following_ids = "SELECT followed_id FROM relationships
-  #     WHERE  follower_id = :user_id"
-  #   Micropost.where("user_id IN (#{following_ids})
-  #     OR user_id = :user_id", user_id: id)
-  # end
+  def feed
+   following_ids = "SELECT followed_id FROM relationships
+      WHERE  follower_id = :user_id"
+    Post.where("user_id IN (#{following_ids})
+      OR user_id = :user_id", user_id: id)
+  end
 
   def follow other_user
     following << other_user

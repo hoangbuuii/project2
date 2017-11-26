@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   }
   match "/users", to: "users#index", via: "get"
   match "/users/:id", to: "users#show", via: "get"
+  
+  resources :relationships, only: %i(create destroy)
 
   resources :posts do
     resources :comments
@@ -19,6 +21,4 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
-  resources :relationships, only: %i(create destroy)
 end

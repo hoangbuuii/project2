@@ -7,22 +7,24 @@
         <%= link_to @post.user.name, @post.user %>
       </h1>
     </section>
+    <big><div class="title"><%= link_to @post.title, @post %></div></big>
+    <div class="content"><%= @post.content %></div>
     <div class="timestamp">
       <%= t "posted" %> <%= time_ago_in_words(@post.created_at) %> <%= t "ago" %>.
     </div>
+  </aside>
+  <div class="col-md-8">
     <% if @post.comments.any? %>
-      <h3><%= t "comments" %> (<%= @post.comments.count %>)</h3>
+      <h3><%= t "comment" %> (<%= @post.comments.count %>)</h3>
       <ol class="comments">
         <%= render @comments, post: @post %>
       </ol>
       <%= will_paginate @comments %>
     <% end %>
     <% if user_signed_in? %>
+      <% if current_user.following?(@post.user) || current_user?(@post.user) %>
         <%= render "comments/form" %>
+      <% end %>
     <% end %>
-  </aside>
-  <div class="col-md-8">
-    <strong><big><div class="title"><%= link_to @post.title, @post %></div></big></strong>
-    <div class="content"><%= @post.content %></div>
   </div>
 </div>

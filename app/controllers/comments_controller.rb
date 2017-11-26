@@ -9,20 +9,20 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      #flash[:success] = t ".comment_created"
+      flash[:success] = t ".comment_created"
     else
-      #flash[:warning] = t ".comment_cannot_be_created"
+      flash[:warning] = t ".comment_cannot_be_created"
     end
-    redirect_to post_path(@post)
+    redirect_to request.referrer || root_url
   end
 
   def destroy
     if @comment.destroy
-      #flash[:success] = t ".comment_deleted"
+      flash[:success] = t ".comment_deleted"
     else
-      #flash[:warning] = t ".comment_cannot_be_deletes"
+      flash[:warning] = t ".comment_cannot_be_deletes"
     end
-    redirect_to post_path(@post)
+    redirect_to request.referrer || root_url
   end
 
   private

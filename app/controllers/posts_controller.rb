@@ -13,6 +13,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = @post.comments.build(params[:comment])
+    @comments = @post.comments.order_by_created_at_desc
+      .paginate page: params[:page], per_page: Settings.per_page
   end
 
   def new

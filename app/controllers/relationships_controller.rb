@@ -14,4 +14,19 @@ class RelationshipsController < ApplicationController
     current_user.unfollow @user
     response_to_user
   end
+
+  private
+
+  def check_valid user
+    return if user
+    flash[:warning] = t "cannot_find_user"
+    redirect_to root_path
+  end
+
+  def response_to_user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
+  end
 end
