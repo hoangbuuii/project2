@@ -3,6 +3,9 @@
   <big><span class="user"><%= link_to post.user.name, post.user %></span></big>
   <span class="content"><%= link_to post.title, post %></span>
   <span class="content"><%= post.content %></span>
+  <span class="tags">
+    <%= raw tag_links(post.all_tags) %>
+  </span>
   <span class="timestamp">
     <%= t("posted") %> <%= time_ago_in_words(post.created_at) %> <%= t("ago") %>.
     <% if current_user? post.user %>

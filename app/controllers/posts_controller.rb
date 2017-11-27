@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.search(params[:search]).order_by_created_at_desc
         .paginate page: params[:page], per_page: Settings.per_page
+    elsif params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order_by_created_at_desc
+        .paginate page: params[:page], per_page: Settings.per_page
     else
       @posts = Post.all.order_by_created_at_desc
         .paginate page: params[:page], per_page: Settings.per_page
@@ -66,6 +69,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content, :all_tags, :user_id)
     end
 end

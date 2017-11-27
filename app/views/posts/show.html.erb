@@ -12,6 +12,9 @@
     <div class="timestamp">
       <%= t "posted" %> <%= time_ago_in_words(@post.created_at) %> <%= t "ago" %>.
     </div>
+    <div class="tags"">
+      <%= raw tag_links(@post.all_tags) %>
+    </div>
   </aside>
   <div class="col-md-8">
     <% if @post.comments.any? %>

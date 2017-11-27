@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-
+  get "tags/:tag", to: "posts#index", as: "tag"
   resources :comments, only: %i(create destroy)
 
   resources :users do
