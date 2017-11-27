@@ -1,0 +1,5 @@
+<p><%= t "hello" %>, <%= @comment.post.user.name %></p>
+<p><%= @current_user.name %> <%= t ".has_commented" %>:</p>
+<big><p>"<%= @comment.content %>"</p></big>
+<p><%= t ".on_your_post" %>:</p>
+<strong><p><%= @comment.post.content %></p></strong>

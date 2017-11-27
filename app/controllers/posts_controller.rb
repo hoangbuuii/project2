@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     @post = @user.posts.new(post_params)
     respond_to do |format|
       if @post.save
+        PostMailer.post_created(@post).deliver
         format.html {redirect_to @post, notice:  t(".post_was_successfully_created")}
         format.json {render :show, status: :created, location: @post}
       else

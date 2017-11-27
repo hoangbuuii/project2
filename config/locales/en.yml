@@ -16,12 +16,13 @@ en:
   follow: "Follow"
   followers: "followers"
   following: "following"
-  hello: "Hello world"
+  hello: "Hello"
   help: "Help"
   home: "Home"
   invalid_combination: "Invalid email/password combination"
   log_in: "Log in"
   log_out: "Log out"
+  please_log_in: "Please log in!"
   post: "Post(s)"
   posted: "Posted"
   profile: "Profile"
@@ -43,14 +44,12 @@ en:
   view_my_profile: "View my profile"
   welcome: "Welcome to the Sample App!"
   you_sure: "You sure?"
-  ##controller
-  #application
-  please_log_in: "Please log in!"
+
   comments:
     create:
-      comment_created: "Comment is created!"
-      comment_cannot_be_created: "Comment cannot be created!"
       cannot_find_post: "Cannot find post"
+      comment_cannot_be_created: "Comment cannot be created!"
+      comment_created: "Comment is created!"
     destroy:
       comment_cannot_be_deleted: "Comment cannot be deleted!"
       comment_deleted: "Comment is deleted!"
@@ -64,4 +63,14 @@ en:
     destroy:
       post_was_successfully_destroyed: "Post was successfully destroyed."
     posted: "Posted"
- 
+  
+  comment_mailer:
+    comment_created:
+      comment_created_subject: "You have new comment on your post!"
+      has_commented: "has commented"
+      on_your_post: "on your post"
+  
+  post_mailer:
+    post_created:
+      post_created_subject: "You have created post!"
+      your_post_has_been_created: "Your post has been created:"

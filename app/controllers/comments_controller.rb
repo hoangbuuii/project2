@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
+      CommentMailer.comment_created(current_user, @comment).deliver
       flash[:success] = t ".comment_created"
     else
       flash[:warning] = t ".comment_cannot_be_created"
