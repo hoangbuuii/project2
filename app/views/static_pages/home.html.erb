@@ -5,14 +5,15 @@
     <aside class="col-md-4">
       <section class="user_info">
         <%= render "shared/user_info" %>
-      </section>
-      <section class="stats">
         <%= render "shared/stats" %>
       </section>
       <section class="search_post">
         <%= render "shared/search_post" %>
       </section>
-      <%= link_to "New Post", new_post_path %>
+      <p class="button" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-thumbs-up"></span> 
+        <%= link_to "New Post", new_post_path %>
+      </p>   
     </aside>
      <div class="col-md-8">
         <%= render "shared/feed" %>

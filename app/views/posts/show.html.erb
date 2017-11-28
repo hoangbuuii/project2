@@ -1,22 +1,22 @@
 <% provide(:title, @post.title) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-8">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @post.user %>
+        <%= gravatar_for(@post.user, size: Settings.gravatar_big_size) %>
         <%= link_to @post.user.name, @post.user %>
       </h1>
     </section>
-    <big><div class="title"><%= link_to @post.title, @post %></div></big>
-    <div class="content"><%= @post.content %></div>
+    <div class="title"><big><p><%= link_to @post.title, @post %></p></big></div>
+    <div class="content"><p><%= @post.content %></p></div>
     <div class="timestamp">
       <%= t "posted" %> <%= time_ago_in_words(@post.created_at) %> <%= t "ago" %>.
     </div>
-    <div class="tags"">
-      <%= raw tag_links(@post.all_tags) %>
-    </div>
+    <span class="timestamp">
+      <p><%= t("tag") %>: <%= raw tag_links(@post.all_tags) %></p>
+    </span>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-4">
     <% if @post.comments.any? %>
       <h3><%= t "comment" %> (<%= @post.comments.count %>)</h3>
       <ol class="comments">

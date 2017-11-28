@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
-  has_many :taggings
-  has_many :posts, through: :taggings
+  has_many :taggings, dependent: :destroy
+  has_many :posts, through: :taggings, dependent: :destroy
   validates :name, presence: true, length: {maximum:Settings.tag_max_length_name}
 
   def self.counts
