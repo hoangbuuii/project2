@@ -1,6 +1,7 @@
 user_max_length_name: 50
 user_max_length_email: 255
 user_min_length_password: 6
+gravatar_bigger_size: 180
 gravatar_big_size: 150
 gravatar_size: 80
 gravatar_small_size: 50

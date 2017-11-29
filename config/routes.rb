@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_pages#home"
   get "/help", to: "static_pages#help"
-  devise_for :users, controllers: {
+  devise_for :users, controllers:{
     sessions: "users/sessions",
-    registrations: "users/registrations"
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
   match "/users", to: "users#index", via: "get"
   match "/users/:id", to: "users#show", via: "get"

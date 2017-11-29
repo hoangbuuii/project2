@@ -35,7 +35,7 @@
 <% end %>
 
 <div class="tags-cloud">
-  <h4>Tags Cloud</h4>
+  <h4><%= t "tag_cloud" %></h4>
   <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
   <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>

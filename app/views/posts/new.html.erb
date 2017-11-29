@@ -1,3 +1,6 @@
+<% provide :title, t("compose_new_post") %>
+<h1><%= t "compose_new_post" %></h1>
+
 <%= render "form", post: @post %>
 
 <%= link_to t("back"), posts_path %>

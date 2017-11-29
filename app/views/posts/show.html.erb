@@ -4,17 +4,16 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for(@post.user, size: Settings.gravatar_big_size) %>
-        <%= link_to @post.user.name, @post.user %>
+        <%= link_to @post.user.name, @post.user %>       
       </h1>
+      <div class="timestamp">
+        <%= t "posted" %> <%= time_ago_in_words(@post.created_at) %> <%= t "ago" %>.
+        <p># <%= raw tag_links(@post.all_tags) %></p>
+      </div>
+      <div class="title"><big><h2><%= link_to @post.title, @post %></h2></big></div>
     </section>
-    <div class="title"><big><p><%= link_to @post.title, @post %></p></big></div>
     <div class="content"><p><%= @post.content %></p></div>
-    <div class="timestamp">
-      <%= t "posted" %> <%= time_ago_in_words(@post.created_at) %> <%= t "ago" %>.
-    </div>
-    <span class="timestamp">
-      <p><%= t("tag") %>: <%= raw tag_links(@post.all_tags) %></p>
-    </span>
+    <%= link_to t("edit"), edit_post_path(@post) %>
   </aside>
   <div class="col-md-4">
     <% if @post.comments.any? %>
