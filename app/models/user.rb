@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  scope :select_id_name_email, ->{select :id, :name, :email}
+  scope :order_created_at, ->{order :created_at}
+
   def follow other_user
     following << other_user
   end
@@ -23,5 +26,9 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  def current_user? user
+    self == user
   end
 end
