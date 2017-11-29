@@ -1,33 +1,69 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  about: "About"
+  ago: "ago"
+  all_users: "All users"
+  back: "Back"
+  cannot_find_user: "Cannot find user!"
+  change: "change"
+  comment: "Comment"
+  comment_sth: "Comment something..."
+  comments: "Comments"
+  compose_new_micropost: "Compose new micropost..."
+  confirmation: "Confirmation"
+  create_my_account: "Create my account"
+  delete: "Delete"
+  edit_user: "Edit user"
+  enter_title: "Enter the title..."
+  follow: "Follow"
+  followers: "followers"
+  following: "following"
   hello: "Hello world"
+  help: "Help"
+  home: "Home"
+  invalid_combination: "Invalid email/password combination"
+  log_in: "Log in"
+  log_out: "Log out"
+  microposts: "Microposts"
+  post: "Post"
+  posted: "Posted"
+  profile: "Profile"
+  profile_updated: "Profile updated"
+  project_1: "Project 2"
+  register: "register"
+  save_changes: "Save changes"
+  search: "Search"
+  search_post: "Search post by title"
+  settings: "Settings"
+  sign_up: "Sign up"
+  sign_up_now: "Sign up now!"
+  title: "Hoang Bui's Project 2"
+  unfollow: "Unfollow"
+  update_your_profile: "Update your profile"
+  user_cannot_be_deleted: "User cannot be deleted!"
+  user_deleted: "User is created!"
+  users: "Users"
+  view_my_profile: "View my profile"
+  welcome: "Welcome to the Sample App!"
+  you_sure: "You sure?"
+  ##controller
+  #application
+  please_log_in: "Please log in!"
+  comments:
+    create:
+      comment_created: "Comment is created!"
+      comment_cannot_be_created: "Comment cannot be created!"
+      cannot_find_post: "Cannot find post"
+    destroy:
+      comment_cannot_be_deleted: "Comment cannot be deleted!"
+      comment_deleted: "Comment is deleted!"
+    commented: "Commented"
+
+  posts:
+    create:
+      post_was_successfully_created: "Post was successfully created."
+    update:
+      post_was_successfully_updated: "Post was successfully updated."
+    destroy:
+      post_was_successfully_destroyed: "Post was successfully destroyed."
+    posted: "Posted"
+ 
