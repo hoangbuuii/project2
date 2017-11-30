@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  match "/users", to: "users#index", via: "get"
-  match "/users/:id", to: "users#show", via: "get"
   
   resources :relationships, only: %i(create destroy)
 

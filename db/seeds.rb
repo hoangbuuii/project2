@@ -15,13 +15,6 @@ User.create!(name:  "Admin",
     is_admin: false)
 end
 
-users = User.order(:created_at).take(8)
-8.times do
-  title = Faker::LeagueOfLegends.rank
-  content = Faker::LeagueOfLegends.quote
-  users.each { |user| user.posts.create!(title: title, content: content) }
-end
-
 users = User.all
 user  = users.first
 following = users[2..50]

@@ -53,6 +53,7 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter", require: false
   gem "scss_lint_reporter_checkstyle", require: false
   gem "selenium-webdriver"
+  gem "sqlite3"
 end
 
 group :test do
@@ -63,7 +64,6 @@ group :test do
 end
 
 group :development do
-  gem "sqlite3"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

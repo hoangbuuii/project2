@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-12">
       <section class="user_info">
         <%= render "shared/user_info" %>
         <%= render "shared/stats" %>
@@ -15,17 +15,17 @@
         <%= link_to "New Post", new_post_path %>
       </p>   
     </aside>
-     <div class="col-md-8">
+     <div class="col-md-12">
         <%= render "shared/feed" %>
     </div>
   </div>
 <% else %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-12">
       <h1><%= t "project_2" %></h1>
       <h2><%= t "title" %></h2>
     </aside>
-      <div class="col-md-8">
+      <div class="col-md-12">
         <ol class="posts">
           <%= render @posts %>
         </ol>
@@ -33,10 +33,3 @@
     </div>
   </div>
 <% end %>
-
-<div class="tags-cloud">
-  <h4><%= t "tag_cloud" %></h4>
-  <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
-  <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
